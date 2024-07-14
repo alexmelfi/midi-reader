@@ -15,9 +15,44 @@ html {
     min-width: 600px;
     padding: 10px;
 
-    overflow: hidden;
+    font-family:'Trebuchet MS', sans-serif;
+}
+
+.play-pause-button {
+    cursor: pointer;
+
+    flex-direction: row;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 20%;
+    height: auto;
+    margin-left: -130px;
+
+    position:relative;
+}
+
+.song-selector {
+    display: inline;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5vh;
+
+    float: left;
+    position: relative;
+
+    margin-left: -30px;
+    margin-top: -25px;
+    
+    background-color: rgb(227, 201, 49);
+    box-shadow: 8px 6px rgb(55, 46, 1);
 
     font-family:'Trebuchet MS', sans-serif;
+    font-size: 14pt;
+
+    border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(36, 16, 4);
 }
 
 .key {

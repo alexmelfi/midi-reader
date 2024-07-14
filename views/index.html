@@ -17,17 +17,17 @@
                 <option value="Chord Experiments">Chord Experiments</option>
                 <option value="Procrastination">Procrastination</option>
             </select>
-            <div onclick="playPauseTrack()">
+            <div>
                 <img class="play-pause-button" src="../icons/play-button.svg"></img>
             </div>
             <div>
                 <div id="current-time" class="time" style="display: inline;">00:00</div> /
                 <div id="duration" class="time" style="display: inline;">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek-slider" onchange="seekTo()">
+                <input type="range" min="1" max="100" value="0" class="seek-slider">
             </div>
         </div>
     </div>
   <div id="piano">
-    <img class="piano" src="../public/styles/piano.svg">
+    <img class="piano" src="../public/styles/piano.svg" draggable="false">
   </div>
 </body>
