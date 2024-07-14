@@ -1,0 +1,36 @@
+html {
+    background-color: rgb(7, 102, 20);
+    background-image: url('green-background.png');
+    background-size:auto;
+    background-attachment: fixed;
+    font-size: 14pt;
+
+    overflow: hidden;
+}
+
+.section {
+    margin: auto;
+
+    width: 50%;
+    min-width: 600px;
+    padding: 10px;
+
+    overflow: hidden;
+
+    font-family:'Trebuchet MS', sans-serif;
+}
+
+.key {
+    position: fixed;
+    overflow: hidden;
+
+    bottom: 0;
+}
+
+.piano {
+    position:fixed;
+    width: 100%;
+    left: 0;
+    /* margin-left: -25%; */
+    bottom: 0;
+}

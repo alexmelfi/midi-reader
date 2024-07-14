@@ -1,0 +1,23 @@
+{
+  "name": "midi-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon .",
+    "build": "webpack"
+  },
+  "author": "Alex Melfi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "midi-player-js": "^2.0.16",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
