@@ -11,6 +11,7 @@
   "author": "Alex Melfi",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1659.0",
     "express": "^4.19.2",
     "midi-player-js": "^2.0.16",
     "webpack-node-externals": "^3.0.0"
