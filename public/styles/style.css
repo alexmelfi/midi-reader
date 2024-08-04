@@ -1,71 +1,103 @@
 html {
-    background-color: rgb(7, 102, 20);
-    background-image: url('green-background.png');
-    background-size:auto;
-    background-attachment: fixed;
-    font-size: 14pt;
+  background-color: #061d0d;
+  background-size: auto;
+  background-attachment: fixed;
+  font-size: 14pt;
+  overflow: hidden;
+}
 
-    overflow: hidden;
+body {
+  margin: auto;
+  width: 50%;
+  min-width: 600px;
+  padding: 10px;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 .section {
-    margin: auto;
-
-    width: 50%;
-    min-width: 600px;
-    padding: 10px;
-
-    font-family:'Trebuchet MS', sans-serif;
+  color: #decf91;
+  border: 6px solid;
+  border-color: #977e1c #774b15 #774b15 #977e1c;
+  background-color: rgba(12, 60, 28, 0.4);
+  border-radius: 14px;
+  margin: 40px 40px 20px 35px;
 }
 
 .play-pause-button {
-    cursor: pointer;
-
-    flex-direction: row;
-    align-items: center;
-
-    box-sizing: border-box;
-    width: 20%;
-    height: auto;
-    margin-left: -130px;
-
-    position:relative;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  width: 20%;
+  height: auto;
+  margin-left: -130px;
+  margin-top: 12px;
+  fill-opacity: 0.7;
+  position: relative;
 }
 
 .song-selector {
-    display: inline;
-    width: fit-content;
-    height: fit-content;
-    padding: 0.5vh;
-
-    float: left;
-    position: relative;
-
-    margin-left: -30px;
-    margin-top: -25px;
-    
-    background-color: rgb(227, 201, 49);
-    box-shadow: 8px 6px rgb(55, 46, 1);
-
-    font-family:'Trebuchet MS', sans-serif;
-    font-size: 14pt;
-
-    border-style: solid;
-    border-radius: 3px;
-    border-color: rgb(36, 16, 4);
+  display: inline;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5vh;
+  float: left;
+  position: relative;
+  margin-left: -30px;
+  margin-top: -25px;
+  background-color: #0C3C1C;
+  box-shadow: 8px 6px rgb(55, 46, 1);
+  border: 6px solid;
+  border-color: #977e1c #774b15 #774b15 #977e1c;
+  border-radius: 3px;
+  color: #decf91;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14pt;
 }
 
 .key {
-    position: fixed;
-    overflow: hidden;
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+}
 
-    bottom: 0;
+.key text {
+  bottom: 0;
 }
 
 .piano {
-    position:fixed;
-    width: 100%;
-    left: 0;
-    /* margin-left: -25%; */
-    bottom: 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  /* margin-left: -25%; */
+  bottom: 0;
 }
+
+body::before, body::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 6rem;
+  height: 3rem;
+  content: ".";
+  mix-blend-mode: screen;
+  animation: 44s -27s random-movement infinite ease-in-out alternate;
+  z-index: -200;
+  color: transparent;
+}
+
+body::before {
+  text-shadow: -0.3608554595em 1.3642779582em 7px hsl(48, 29.7426258639%, 50%), -0.1221805002em 1.3485108254em 7px hsl(48, 0.8631131623%, 50%), 2.2503462289em 2.4392254615em 7px hsl(48, 58.2234227848%, 50%), 0.507293622em 0.1611941579em 7px hsl(48, 13.4076174847%, 50%), 0.0493311582em 1.4420543788em 7px hsl(48, 76.2299188631%, 50%), -0.2032427751em 1.1215897093em 7px hsl(48, 62.1812655429%, 50%), 2.2559911737em 1.272065317em 7px hsl(48, 35.6314513483%, 50%), 0.7741031364em -0.1635551035em 7px hsl(48, 4.1421348404%, 50%), 1.6344378611em 1.8729563735em 7px hsl(48, 22.4715337163%, 50%), 2.3733662879em 0.5905410984em 7px hsl(48, 43.573565129%, 50%), 2.0909981818em 1.409808269em 7px hsl(48, 69.0756582518%, 50%), 2.0573077246em 2.386900535em 7px hsl(48, 4.0703971%, 50%), 1.3871108385em 0.9496645343em 7px hsl(48, 3.910896969%, 50%), 1.4238608455em 1.6477442228em 7px hsl(48, 39.3531927329%, 50%), 1.84336914em 1.4894831506em 7px hsl(48, 62.8643186104%, 50%), 2.2092233511em 0.1360873215em 7px hsl(48, 71.0188669406%, 50%), 0.3509989909em 1.5412966874em 7px hsl(48, 14.2853721019%, 50%), 0.2980955031em 2.3959215717em 7px hsl(48, 29.362396089%, 50%), 2.2194918175em 1.3664259358em 7px hsl(48, 19.5330645386%, 50%), 2.0437467616em 0.1846824427em 7px hsl(48, 41.0250861898%, 50%), 0.3351082853em 1.822871685em 7px hsl(48, 22.6259506687%, 50%), 1.0758042413em 0.5915037225em 7px hsl(48, 69.208949159%, 50%), 1.9625355077em 0.5413541936em 7px hsl(48, 65.3581312722%, 50%), 0.2623888779em 0.1322198176em 7px hsl(48, 25.2654963138%, 50%), 0.3924904599em 1.9796892959em 7px hsl(48, 59.9608497295%, 50%), 2.3936016376em 0.572092563em 7px hsl(48, 63.6303183215%, 50%), 0.8865972442em -0.4338182029em 7px hsl(48, 80.2990100281%, 50%), 0.622025494em 0.1671836017em 7px hsl(48, 11.9368290765%, 50%), 1.189338403em 1.9362130693em 7px hsl(48, 52.6674697713%, 50%), 2.1289641453em 0.2282786771em 7px hsl(48, 65.675887444%, 50%), 1.6657497759em 0.2559971328em 7px hsl(48, 49.5419407235%, 50%), 1.707483193em 1.0653542145em 7px hsl(48, 34.9930789029%, 50%), 1.1668989811em 2.4235209627em 7px hsl(48, 48.5404771068%, 50%), -0.3911990893em -0.3455092062em 7px hsl(48, 7.3763730582%, 50%), 0.1256153042em 1.6552638695em 7px hsl(48, 25.1978246204%, 50%), 1.1733588417em 2.0840627402em 7px hsl(48, 51.2861839854%, 50%), 1.5076251915em 2.3630266504em 7px hsl(48, 53.8502328089%, 50%), -0.3997546358em -0.2089285688em 7px hsl(48, 19.157374029%, 50%), -0.1909225374em 0.9400463193em 7px hsl(48, 21.3074996121%, 50%), 1.752144688em 0.8461087764em 7px hsl(48, 46.6460845277%, 50%), 1.0187688422em 1.566520718em 7px hsl(48, 51.9791438835%, 50%), 0.8101233837em 2.4107958861em 7px hsl(48, 42.9327947389%, 50%), 0.5675546477em -0.0187730924em 7px hsl(48, 26.065781851%, 50%), 2.1296747677em 0.7017586844em 7px hsl(48, 37.9976395439%, 50%), 1.4959972118em 0.9454716354em 7px hsl(48, 19.8980938939%, 50%), 2.1329292003em 1.9124589192em 7px hsl(48, 71.5285745192%, 50%), 0.6556592414em 2.1278747445em 7px hsl(48, 6.575527778%, 50%), 2.2824807517em 1.1439818593em 7px hsl(48, 47.1914889862%, 50%), 0.1627563759em 1.3358237301em 7px hsl(48, 48.1955524356%, 50%), 0.6414681954em 2.4465035405em 7px hsl(48, 15.8421314223%, 50%), 2.2676177578em 1.1505203175em 7px hsl(48, 36.566891998%, 50%), -0.3704925753em 0.1743997069em 7px hsl(48, 13.0712270373%, 50%), 1.7412347849em 0.1094066991em 7px hsl(48, 62.4453771821%, 50%), 1.3917449722em 0.1136344676em 7px hsl(48, 3.0863770016%, 50%), 0.8270991923em 0.5619874478em 7px hsl(48, 40.8556719738%, 50%), 0.429990323em 2.4945418148em 7px hsl(48, 6.4644639364%, 50%), -0.4093635365em 2.4308325997em 7px hsl(48, 0.0106264643%, 50%), 1.0812092381em 0.6869951091em 7px hsl(48, 70.0831087002%, 50%), 0.7674134317em 0.7399383305em 7px hsl(48, 12.1904798171%, 50%), 0.234151524em 0.4927836576em 7px hsl(48, 22.1379247931%, 50%), -0.2071953899em 2.1011031288em 7px hsl(48, 47.5838938311%, 50%), 1.2781038925em 0.0579417351em 7px hsl(48, 13.7184719406%, 50%), 1.2341524076em -0.4421316125em 7px hsl(48, 70.2464457535%, 50%), -0.3579720925em 0.6193600453em 7px hsl(48, 64.4424994495%, 50%), 1.9546376283em 1.1581915395em 7px hsl(48, 45.3571705826%, 50%), 1.6179229125em 0.5109257974em 7px hsl(48, 58.5684958695%, 50%), -0.3132031228em 0.6096698873em 7px hsl(48, 49.8536174308%, 50%), 0.8560046099em 2.2899805369em 7px hsl(48, 40.7825381471%, 50%), 1.0339063647em 0.3392230468em 7px hsl(48, 67.5770708131%, 50%), 0.1798050449em 2.3513115996em 7px hsl(48, 17.047565854%, 50%), 1.7229470533em -0.0085661549em 7px hsl(48, 68.734565481%, 50%), 1.3509521635em -0.2324942214em 7px hsl(48, 77.6605164567%, 50%), -0.0763659557em 0.2485392735em 7px hsl(48, 34.3886824737%, 50%), 2.3146563701em 1.2414814438em 7px hsl(48, 23.3379928408%, 50%), 1.9600334203em 2.218791661em 7px hsl(48, 20.2729332931%, 50%), -0.46756071em 0.4520820717em 7px hsl(48, 5.3007239019%, 50%), 1.6224151689em -0.4438904651em 7px hsl(48, 82.1648982615%, 50%), 0.68665884em 1.4769376003em 7px hsl(48, 36.9360901104%, 50%), 1.8331814235em 2.4934830501em 7px hsl(48, 22.3151063252%, 50%), 2.2645740439em 1.3268608593em 7px hsl(48, 22.0081504386%, 50%), -0.2033116501em 2.3548819998em 7px hsl(48, 66.602960807%, 50%);
+  animation-duration: 40s -20s;
+}
+
+@keyframes random-movement {
+  from {
+    transform: scale(12) translateX(7.0036120053px);
+  }
+  to {
+    transform: scale(18) translateX(5.7517168058px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

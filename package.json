@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon .",
-    "build": "webpack"
+    "build": "webpack",
+    "style": "sass public/styles/style.scss public/styles/style.css"
   },
   "author": "Alex Melfi",
   "license": "ISC",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
+    "sass": "^1.77.8",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
   }

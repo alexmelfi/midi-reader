@@ -1,0 +1,126 @@
+html {
+    background-color: #061d0d;
+    background-size:auto;
+    background-attachment: fixed;
+    font-size: 14pt;
+
+    overflow: hidden;
+}
+
+body {
+    margin: auto;
+
+    width: 50%;
+    min-width: 600px;
+    padding: 10px;
+
+    font-family:'Trebuchet MS', sans-serif;
+}
+
+.section {
+  color: #decf91;
+  border: 6px solid;
+  border-color: #977e1c #774b15 #774b15 #977e1c;
+  background-color: rgb(12, 60, 28, 0.4);
+  border-radius: 14px;
+  margin: 40px 40px 20px 35px;
+}
+
+.play-pause-button {
+    cursor: pointer;
+
+    flex-direction: row;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 20%;
+    height: auto;
+    margin-left: -130px;
+    margin-top: 12px;
+
+    fill-opacity: 0.7;
+
+    position:relative;
+}
+
+.song-selector {
+    display: inline;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5vh;
+
+    float: left;
+    position: relative;
+
+    margin-left: -30px;
+    margin-top: -25px;
+    
+    background-color: #0C3C1C;
+    box-shadow: 8px 6px rgb(55, 46, 1);
+    
+    border: 6px solid;
+    border-color: #977e1c #774b15 #774b15 #977e1c;
+    border-radius: 3px;
+
+    color: #decf91;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 14pt;
+}
+
+.key {
+    position: fixed;
+    overflow: hidden;
+
+    bottom: 0;
+}
+
+.key text {
+    bottom: 0;
+}
+
+.piano {
+    position:fixed;
+    width: 100%;
+    left: 0;
+    /* margin-left: -25%; */
+    bottom: 0;
+}
+
+@mixin particle($count) {
+  $text-shadow: ();
+  @for $i from 0 through $count {
+    $text-shadow: $text-shadow,
+                 (-.5+(random()) * 3) + em
+                 (-.5+(random()) * 3) + em
+                 7px
+                 hsl(48, random() * 83%, 50%);
+  }
+  text-shadow: $text-shadow;
+}
+
+body::before, body::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 6rem;
+  height: 3rem;
+  content: '.';
+  mix-blend-mode: screen;
+  animation: 44s -27s random-movement infinite ease-in-out alternate;
+  z-index: -200;
+  color: transparent;
+}
+
+body::before {
+  @include particle(80);
+  animation-duration: 40s -20s;
+}
+
+@keyframes random-movement {
+  from {
+    transform: scale(12) translateX(random() * 50px);
+  }
+  to {
+    transform: scale(18) translateX(random() * 50px);
+  }
+}  

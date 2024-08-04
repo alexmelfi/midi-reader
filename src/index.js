@@ -19,7 +19,7 @@ const loadMusic = music => {
     playingMusic.load()
 
     isPlaying = false
-    playPauseButton.src = '../icons/play-button.svg'
+    playPauseButton.src = 'icons/play-button.svg'
 
     updateTimer = setInterval(seekUpdate)
 }
@@ -33,8 +33,8 @@ const togglePlay = () => {
     }
     isPlaying = !isPlaying
 
-    isPlaying ? playPauseButton.src = '../icons/pause-button.svg'
-        : playPauseButton.src = '../icons/play-button.svg'
+    isPlaying ? playPauseButton.src = 'icons/pause-button.svg'
+        : playPauseButton.src = 'icons/play-button.svg'
 }
 
 const play = () => {
@@ -86,12 +86,12 @@ const seekUpdate = () => {
 songSelector.addEventListener('change', () => {
     if (isPlaying) togglePlay()
 
-    loadMusic('../songs/' + songSelector.value + '.wav')
+    loadMusic('songs/' + songSelector.value + '.wav')
     loadMIDI(songSelector.value)
     clearKeys()
 })
 
-loadMusic('../songs/' + songSelector.value + '.wav')
+loadMusic('songs/' + songSelector.value + '.wav')
 
 const calcNotePosition = noteName => {
     const note = noteName.slice(0, noteName.length - 1)
@@ -124,6 +124,14 @@ const calcNotePosition = noteName => {
         case 'G':
             position = (octave * 7) + 6
             break
+        case 'Ab':
+            position = ((octave + 1) * 7)
+            color = false
+            break
+        case 'Bb':
+            position = ((octave + 1) * 7) + 1
+            color = false
+            break
         case 'Db':
             position = (octave * 7) + 3
             color = false
@@ -135,15 +143,6 @@ const calcNotePosition = noteName => {
         case 'Gb':
             position = (octave * 7) + 6
             color = false
-            break
-        case 'Ab':
-            position = ((octave + 1) * 7)
-            color = false
-            break
-        case 'Bb':
-            position = ((octave + 1) * 7) + 1
-            color = false
-            break
     }
 
     // console.log(noteName + ' at ' + position)
@@ -158,12 +157,12 @@ const calcNotePosition = noteName => {
 
 // Initialize player and register event handler
 const Player = new MidiPlayer.default.Player(event => {
-	console.log(event)
+	// console.log(event)
 })
 
 Player.on('midiEvent', event => {
     if (event.noteName) generateKeys(calcNotePosition(event.noteName),
-        event.noteNumber, event.name === 'Note on', event.noteName)
+    event.noteNumber, event.name === 'Note on', event.noteName)
     else if (event.name === 'Set Tempo') {
         Player.setTempo(event.data)
     }
@@ -183,7 +182,7 @@ const generateKeys = (position, noteNumber, noteOn, noteName) => {
             key.style = `height: ${(cHeight / 8.3) / cHeight * 100}vw;
             left:${(((cWidth / 52) * position.position) / cWidth * 100) + 0.1}vw;
             width: ${(cWidth / 52) / cWidth * 100}vw;
-            background-color: rgb(101, 216, 116);
+            background-color: #15904e;
             border-radius: 3px;
             border-color: black;`
         }
@@ -192,9 +191,10 @@ const generateKeys = (position, noteNumber, noteOn, noteName) => {
             bottom: ${(cHeight / 25) / cHeight * 100}vw;
             left:${(((cWidth / 52) * position.position)/ cWidth * 100) - 0.5}vw;
             width: ${(cWidth / 100) / cWidth * 100}vw;
-            background-color: rgb(7, 102, 20);`
+            background-color: #165533;
+            z-index: 100;`
         }
-        key.innerText = noteName
+        // key.innerText = noteName
         key.id = noteNumber
         pianoDiv.appendChild(key)
         numKeys++
@@ -220,6 +220,7 @@ const songURIs = {
     'New Joy': 'https://s3.amazonaws.com/alexmelfi.com/music/midi/New+Joy.uri',
     'Chord Experiments': 'https://s3.amazonaws.com/alexmelfi.com/music/midi/Chord+Experiments.uri',
     'Procrastination': 'https://s3.amazonaws.com/alexmelfi.com/music/midi/Procrastination.uri',
+    'Stony Walk': 'https://s3.amazonaws.com/alexmelfi.com/music/midi/Stony+Walk.uri'
 }
 
 // Load a MIDI file
